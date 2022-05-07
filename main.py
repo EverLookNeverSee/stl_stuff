@@ -18,3 +18,7 @@ your_mesh = mesh.Mesh.from_file(path, calculate_normals=False, speedups=True)
 figure = pyplot.figure()
 axes = mplot3d.Axes3D(figure)
 axes.add_collection3d(mplot3d.art3d.Poly3DCollection(your_mesh.vectors))
+
+# Performing autoscaling
+scale = your_mesh.points.flatten()
+axes.auto_scale_xyz(scale, scale, scale)
